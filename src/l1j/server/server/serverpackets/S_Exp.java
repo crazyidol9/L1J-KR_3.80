@@ -32,10 +32,15 @@ public class S_Exp extends ServerBasePacket {
 	 *            PC
 	 */
 	public S_Exp(L1PcInstance pc) {
+		
+		/** 이 부분은 이상하게 공격을 해서 경험치가 변화되면 상점 판매창이 나타난다. 그래서 주석처리함 
 		writeC(Opcodes.S_OPCODE_EXP);
 		writeC(pc.getLevel());
 		writeD(pc.getExp());
+		***/
+		
 
+		// 아래는 기존 주석부분
 		// writeC(Opcodes.S_OPCODE_EXP);
 		// writeC(0x39);// level
 		// writeD(_objid);// ??
