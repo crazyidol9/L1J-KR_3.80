@@ -43,7 +43,7 @@ public class goitem extends javax.swing.JFrame {
   label3 = new java.awt.Label();
   enchantlevel = new java.awt.TextField();
   label4 = new java.awt.Label();
-  count = new java.awt.TextField();
+  giftcount = new java.awt.TextField();
 
   setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
   setTitle("Gift giving");
@@ -55,7 +55,7 @@ public class goitem extends javax.swing.JFrame {
   label3.setText("enchantlevel");
   enchantlevel.setText("");
   label4.setText("count");
-  count.setText("");
+  giftcount.setText("");
   buttongoitem = new java.awt.Button();
   buttongoitem.setLabel("Gift giving");  
   buttongoitem.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -85,7 +85,7 @@ public class goitem extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addComponent(itemnumber, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
-                  .addComponent(count, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)))
+                  .addComponent(giftcount, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)))
                   .addGroup(layout.createSequentialGroup()
                     .addGap(117, 117, 117)
                     .addComponent(buttongoitem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -105,7 +105,7 @@ public class goitem extends javax.swing.JFrame {
           .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(enchantlevel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(count, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(giftcount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19)
                 .addComponent(buttongoitem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -119,7 +119,7 @@ public class goitem extends javax.swing.JFrame {
     
     int itemid = Integer.parseInt(itemnumber.getText());
    int enchant = Integer.parseInt(enchantlevel.getText());
-   int count = Integer.parseInt(count.getText());
+   int count = Integer.parseInt(giftcount.getText());
    L1Item temp = ItemTable.getInstance().getTemplate(itemid);
    
    for (L1PcInstance pc : L1World.getInstance().getAllPlayers()) {
@@ -173,7 +173,7 @@ public class goitem extends javax.swing.JFrame {
  private java.awt.Label label3;
  private java.awt.Label label4;
  private java.awt.TextField giftnickname;
- private java.awt.TextField count;
+ private java.awt.TextField giftcount;
  private java.awt.TextField itemnumber;
  private java.awt.TextField enchantlevel;
  
