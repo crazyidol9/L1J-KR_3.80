@@ -8,6 +8,7 @@ import l1j.server.server.model.Instance.L1PcInstance;
 import l1j.server.server.serverpackets.S_ChatPacket;
 import l1j.server.server.serverpackets.S_Disconnect;
 
+// ¿ÀÅäÇÃ·¹ÀÌ¾î Ã¼Å© ÇÔ¼ö
 public class AutoCheckTimer implements Runnable {
 
 	private static Random r = new Random();
@@ -21,26 +22,22 @@ public class AutoCheckTimer implements Runnable {
 			_instance = new AutoCheckTimer();
 		}
 		return _instance;
-	}// ï¿½Î½ï¿½ï¿½Ï½ï¿½ï¿½ï¿½ï¿½
+	}
 
-	public void run() {// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-
+	public void run() {
+		
 		try {
 
-			while (true) {// ï¿½Ýºï¿½
+			while (true) {
 
-				aCode = r.nextInt(9000) + 1000; // 1000~9999ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Code
-				// ï¿½ï¿½ï¿½ï¿½//Å¸Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ÓµÇµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Code ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-				// System.out.println("[AutoCheckTimer]ï¿½ï¿½ ï¿½ï¿½ Ã¼ Æ® ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½
-				// ï¿½ï¿½OK!");//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½È®ï¿½ï¿½
+				aCode = r.nextInt(9000) + 1000;
 				Thread.sleep(60000 * 2);
-				SetnCheck();// SetnCheck ï¿½Þ¼Òµå¸¦ ï¿½ï¿½ï¿½ï¿½
-				Thread.sleep(60000 * 5);// ï¿½×µÚ·ï¿½ 5ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
-				Redo();// ï¿½Ì¹ï¿½ï¿½ï¿½ pc isAuto ï¿½Æ´Ï¸ï¿½ ï¿½ï¿½ ï¿½Ñ¾î°¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½ Ä¡ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-				Thread.sleep(60000 * 5);// ï¿½ï¿½ 5ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-				Discon();// isAutoï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-				Thread.sleep(60000 * 60);// 30ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½îº¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. sleep()ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½å¸¦ ï¿½ï¿½ï¿½ß°ï¿½
-				// ï¿½Ï´ï¿½ ï¿½Þ¼Òµï¿½
+				SetnCheck();// SetnCheck 
+				Thread.sleep(60000 * 5); 
+				Redo(); 
+				Thread.sleep(60000 * 5);
+				Discon();
+				Thread.sleep(60000 * 60);
 			}
 
 		} catch (Exception e) {
@@ -48,15 +45,11 @@ public class AutoCheckTimer implements Runnable {
 
 	}// run()
 
-	public void SetnCheck() {// Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç´ï¿½ ï¿½Þ¼Òµï¿½
-		// System.out.println("SetnChck ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½È®ï¿½ï¿½ ï¿½Ç°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ì¼¼ï¿½ï¿½
-		for (L1PcInstance pc : L1World.getInstance().getAllPlayers()) {// 1.ï¿½ï¿½ï¿½å³»ï¿½ï¿½
-																		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-																		// ï¿½ï¿½ï¿½
-			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½
-			// ////////////////////////////////////////////////////////////////////////////ï¿½×½ï¿½Æ®ï¿½Ê¿ï¿½
+	public void SetnCheck() {
+		// System.out.println("SetnChck ");
+		for (L1PcInstance pc : L1World.getInstance().getAllPlayers()) {
 			boolean AreaCK = false;
-			for (int i = 0; i < 8; i++) { // ï¿½ß°ï¿½
+			for (int i = 0; i < 8; i++) {
 				int castle_id = i + 1;
 				if (L1CastleLocation.checkInWarArea(castle_id, pc)) {
 					AreaCK = true;
@@ -66,11 +59,10 @@ public class AutoCheckTimer implements Runnable {
 			if (!AreaCK) {
 				if (!pc.getMap().isSafetyZone(pc.getLocation())
 						&& !pc.isPinkName() && !pc.isGm()) {
-					// /////////////////////////////////////////////////////////////////////////ï¿½×½ï¿½Æ®ï¿½Ê¿ï¿½
-					pc.ï¿½ï¿½ï¿½ï¿½È®ï¿½ï¿½ï¿½Ê¿ï¿½ï¿½ï¿½Â·Î¹Ù²Ù±ï¿½();// 2.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
+					pc.¿ÀÅäÈ®ÀÎÇÊ¿ä»óÅÂ·Î¹Ù²Ù±â();
 					pc
-							.sendPackets(new S_ChatPacket(pc, "[Authorization code] " + aCode
-									+ "  Please enter a chat window.",
+							.sendPackets(new S_ChatPacket(pc, "[ÀÎÁõÄÚµå] " + aCode
+									+ "  Ã¤ÆÃÃ¢¿¡ ÀÎÁõÄÚµå¸¦ ÀÔ·ÂÇÏ¼¼¿ä.",
 									Opcodes.S_OPCODE_NORMALCHAT, 2));
 					;
 				}
@@ -78,15 +70,11 @@ public class AutoCheckTimer implements Runnable {
 		}//
 	}
 
-	public void Redo() {// ï¿½Ô·ï¿½ï¿½Úµï¿½ ï¿½Ô·ï¿½ï¿½Ï¶ï¿½ï¿½ ï¿½Ï´ï¿½ ï¿½Þ¼Òµï¿½
-	// System.out.println("redo ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½È®ï¿½ï¿½
-		for (L1PcInstance pc : L1World.getInstance().getAllPlayers()) {// 1.ï¿½ï¿½ï¿½å³»
-																		// ï¿½ï¿½ï¿½
-																		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-			// ï¿½Ë»ï¿½ï¿½Ï°ï¿½
-			// ////////////////////////////////////////////////////////////////////////////ï¿½×½ï¿½Æ®ï¿½Ê¿ï¿½
+	public void Redo() {
+	// System.out.println("redo ");
+		for (L1PcInstance pc : L1World.getInstance().getAllPlayers()) {
 			boolean AreaCK = false;
-			for (int i = 0; i < 8; i++) { // ï¿½ß°ï¿½
+			for (int i = 0; i < 8; i++) {
 				int castle_id = i + 1;
 				if (L1CastleLocation.checkInWarArea(castle_id, pc)) {
 					AreaCK = true;
@@ -96,14 +84,11 @@ public class AutoCheckTimer implements Runnable {
 			if (!AreaCK) {
 				if (!pc.getMap().isSafetyZone(pc.getLocation())
 						&& !pc.isPinkName() && !pc.isGm()) {
-					// /////////////////////////////////////////////////////////////////////////ï¿½×½ï¿½Æ®ï¿½Ê¿ï¿½
-					if (pc.ï¿½ï¿½ï¿½ï¿½È®ï¿½ï¿½ï¿½ï¿½ï¿½Ê¿ï¿½ï¿½Ñ»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½()) {// 2.ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Èµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-						pc.sendPackets(new S_ChatPacket(pc, "[ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½] " + aCode
-								+ "  ï¿½ï¿½ Ã¤ï¿½ï¿½Ã¢ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½.",
+					if (pc.¿ÀÅäÈ®ÀÎÀÌÇÊ¿äÇÑ»óÅÂÀÎÁöÇÔ¼ö()) {
+						pc.sendPackets(new S_ChatPacket(pc, "[ÀÎÁõÄÚµå] " + aCode
+								+ "  Ã¤ÆÃÃ¢¿¡ ÀÎÁõÄÚµå¸¦ ÀÔ·ÂÇÏ¼¼¿ä.",
 								Opcodes.S_OPCODE_NORMALCHAT, 2));
 						;
-						// ï¿½ï¿½Å¶ï¿½ï¿½
-						// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 					}
 				}
@@ -113,12 +98,11 @@ public class AutoCheckTimer implements Runnable {
 
 	// Redo
 
-	public void Discon() {// Â¥ï¿½ï¿½ï¿½ï¿½
-	// System.out.println("discon ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½È®ï¿½ï¿½
+	public void Discon() {
 		for (L1PcInstance pc : L1World.getInstance().getAllPlayers()) {
-			if (pc.ï¿½ï¿½ï¿½ï¿½È®ï¿½ï¿½ï¿½ï¿½ï¿½Ê¿ï¿½ï¿½Ñ»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½()) {
+			if (pc.¿ÀÅäÈ®ÀÎÀÌÇÊ¿äÇÑ»óÅÂÀÎÁöÇÔ¼ö()) {
 				pc.sendPackets(new S_Disconnect());
-			} // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Èµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			}
 		}
 	}// Discon
 }
