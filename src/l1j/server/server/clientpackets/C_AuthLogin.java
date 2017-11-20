@@ -32,8 +32,8 @@ public class C_AuthLogin extends ClientBasePacket {
 	public C_AuthLogin(byte[] decrypt, LineageClient client) throws IOException {
 		super(decrypt);
 		/** 3.80c 옵코드 적용 물개 **/
-		String accountName = "vkqwhs123";
-		 String password = "vkqwhs123";
+		String accountName = readS().toLowerCase();
+		String password = readS();
 		String ip = client.getIp();
 		String host = client.getHostname();
 
