@@ -37,7 +37,7 @@ public final class Config {
 	/** Debug/release mode */
 	public static final boolean DEBUG = false;
 	
-	/** �����̸� �ܺ�ȭ **/
+
 	public static String SERVER_NAME;
 	public static String SERVER_URL;
 	public static String SERVER_NATE;
@@ -54,35 +54,33 @@ public final class Config {
 	public static int THREAD_P_SIZE_GENERAL;
 
 	
-	//�̺�Ʈ�縻
 	
-	public static int RATE_LOTTO_TIME; //�̺�Ʈ�縻
+	public static int RATE_LOTTO_TIME;
 
-	public static int RATE_LOTTO_NUMBER; //�̺�Ʈ�縻
+	public static int RATE_LOTTO_NUMBER;
 	
 	public static int RATE_LOTTO_ITEM; 
 
 	
-	// ���������� 
-	public static int RATE_JOIN_CLAN_FULL; // ����������
+	public static int RATE_JOIN_CLAN_FULL;
 
-	// ����������
-	public static int CLAN_BUFFTIME;//���Ϳ� 30�� �̻��ϰ�� ���� �ޱ�
 
-	/** 2012�� 11�� 22�� �߰� **/
-	public static int RATE_SILVER; //��������Ʈ �߰�
+	public static int CLAN_BUFFTIME;
+
+
+	public static int RATE_SILVER;
 	
-	public static int LimitLevel ;  //�������� �ý���
+	public static int LimitLevel ;
 	
-	public static int RESTRICTION_LEVEL;//�������� �̺�Ʈ�ý���
+	public static int RESTRICTION_LEVEL;
 	
-	public static int RATE_DREAM;  //���������� �̺�Ʈ���
+	public static int RATE_DREAM;
 	
-	public static int FEATHER_TIME; //�⺻���� �ð��ܺ�ȭ
+	public static int FEATHER_TIME;
 	
-	public static int FEATHER_NUMBER; //�⺻���а���
+	public static int FEATHER_NUMBER;
 	
-	public static int FEATHER_PLUS; //�⺻ �������ڿܺ�ȭ
+	public static int FEATHER_PLUS;
 	
 	public static int RATE_MAGIC_PC_PC_DAMAGE;
 	public static int RATE_MAGIC_NPC_PC_DAMAGE; 
@@ -125,13 +123,13 @@ public final class Config {
 
 	public static boolean CHECK_SPELL_INTERVAL;
 
-	public static boolean STANDBY_SERVER = false;// ���´���Բ�
+	public static boolean STANDBY_SERVER = false;
 
-	public static int UB_SEAL_ITEM;// ���뺸����
+	public static int UB_SEAL_ITEM;
 	
-	public static boolean Use_Show_Announcecycle; //�ڵ�����
+	public static boolean Use_Show_Announcecycle;
 	 
-	public static int Show_Announcecycle_Time; //�ڵ�����
+	public static int Show_Announcecycle_Time;
 	
 	public static String ALT_WITS_PRESENT;
 	
@@ -163,7 +161,7 @@ public final class Config {
 
 	public static boolean LOGGING_CHAT_CHAT_PARTY;
 	
-	public static int SPEEDUP_SPEEDMENT;//���ӱ� ������ �ܺ�ȭ
+	public static int SPEEDUP_SPEEDMENT;
 
 	public static int AUTOSAVE_INTERVAL;
 
@@ -205,7 +203,7 @@ public final class Config {
 
 	public static double RATE_DROP_ITEMS;
 
-	public static int RATE_ROBOT_TIME; // ����PC(���)
+	public static int RATE_ROBOT_TIME; 
 
 	public static int ENCHANT_CHANCE_WEAPON;
 
@@ -235,13 +233,13 @@ public final class Config {
 
 	public static int CREATE_CHANCE_HISTORY_BOOK;
 
-public static int MAX_LEVEL;  //�űԺ�ȣ����
-	public static int ACCOUNT_LIMIT; // IP�� ���� ���� ���� �ܺ�ȭ
+public static int MAX_LEVEL;
+	public static int ACCOUNT_LIMIT; 
 
-	public static double RATE_CCLAN_XP; // ��������ġ�ܺ�ȭ�߰�
+	public static double RATE_CCLAN_XP; 
 	
 
-	public static double RATE_7_DMG_RATE;//��þ��Ÿ �ܺ�ȭ
+	public static double RATE_7_DMG_RATE;
     public static int RATE_7_DMG_PER;
     public static double RATE_8_DMG_RATE;
     public static int RATE_8_DMG_PER;
@@ -283,7 +281,7 @@ public static int MAX_LEVEL;  //�űԺ�ȣ����
 
 	public static short WHISPER_CHAT_LEVEL;
 	
-	public static short BRTIME;//�����Ʈ�߰�
+	public static short BRTIME;
 
 	public static byte AUTO_LOOT;
 
@@ -291,12 +289,11 @@ public static int MAX_LEVEL;  //�űԺ�ȣ����
 
 	public static boolean ALT_NONPVP;
 	
-	public static boolean ALT_ATKMSG = true; //�߰�
+	public static boolean ALT_ATKMSG = true; 
 	
-	public static boolean R_ATKMSG = true; //�κ���âä��
+	public static boolean R_ATKMSG = true; 
 	
-	public static boolean R_ATKMSG2 = true; //�κ����ä��
-	//public static boolean ALT_ATKMSG;
+	public static boolean R_ATKMSG2 = true; 
 
 	public static boolean AUTH_CONNECT;
 	
@@ -320,16 +317,16 @@ public static int MAX_LEVEL;  //�űԺ�ȣ����
 
 	public static int ALT_ITEM_DELETION_RANGE;
 
-	/** **** �̺�Ʈ ***** */
-	public static boolean ALT_HALLOWEENEVENT; // �ҷ���
+	/** **** ***** */
+	public static boolean ALT_HALLOWEENEVENT; 
 
-	public static boolean ALT_HALLOWEENEVENT2009; // �ҷ���(2009��)
+	public static boolean ALT_HALLOWEENEVENT2009; 
 
-	public static boolean ALT_FANTASYEVENT; // ȯ��
+	public static boolean ALT_FANTASYEVENT; 
 
-	public static boolean ALT_CHUSEOKEVENT; // �߼�(09.09.24)
+	public static boolean ALT_CHUSEOKEVENT; 
 
-	public static int WHOIS_CONTER;// ��Ƽ��
+	public static int WHOIS_CONTER;
 
 	public static boolean ALT_WHO_COMMAND;
 
@@ -375,13 +372,13 @@ public static int MAX_LEVEL;  //�űԺ�ȣ����
 
 	public static int DELETE_DB_DAYS;
 
-	public static boolean WarPotionEffect = true; // ��������
+	public static boolean WarPotionEffect = true; 
 
-	public static boolean isGmchat = true; //����ä��
+	public static boolean isGmchat = true; 
 	
-	public static String ALT_SCARECROW_CLASS_CHANCE; // ��� Ŭ���� ����
+	public static String ALT_SCARECROW_CLASS_CHANCE; 
 	
-	//�̴ϰ�����
+
 	public static int MINIWAR_LOOPTIME;
 	
 	public static int MINIWAR_ATEAM_X;
@@ -533,7 +530,7 @@ public static int MAX_LEVEL;  //�űԺ�ȣ����
 
 	public static int LV99_EXP;
 
-	/** �����ͺ��̽� Ǯ ���� */
+	/**  */
 	public static int min;
 
 	public static int max;
@@ -549,22 +546,17 @@ public static int MAX_LEVEL;  //�űԺ�ȣ����
 
 	public static final String CHAR_SETTINGS_CONFIG_FILE = "./config/charsettings.properties";
 	
-	public static final String OTHER_SETTINGS_CONFIG_FILE = "./config/othersettings.properties"; //�ڵ�����
+	public static final String OTHER_SETTINGS_CONFIG_FILE = "./config/othersettings.properties"; 
 
 	public static boolean shutdown = false;
 
-	// �α� ǥ���Ұ�����
 	public static boolean LOGGER = true;
 
-	// ��Ŷ ǥ�� �Ұ�����
 	public static boolean PACKET = false;
 
-	/** �� ���� ���� */
 
-	// NPC�κ��� ���̸��� �� �ִ� MP�Ѱ�
 	public static final int MANA_DRAIN_LIMIT_PER_NPC = 40;
 
-	// 1ȸ�� �������� ���̸��� �� �ִ� MP�Ѱ�(SOM, ��ö SOM)
 	public static final int MANA_DRAIN_LIMIT_PER_SOM_ATTACK = 9;
 
 	public static void load() {
@@ -576,13 +568,11 @@ public static int MAX_LEVEL;  //�űԺ�ȣ����
 			serverSettings.load(is);
 			is.close();
 			
-			/** �����̸� �ܺ�ȭ **/
+			
 			SERVER_NAME = new String(serverSettings.getProperty("ServerName").getBytes("ISO-8859-1"), "euc-kr");
 			SERVER_URL = new String(serverSettings.getProperty("ServerUrl").getBytes("ISO-8859-1"), "euc-kr");
 			SERVER_NATE = new String(serverSettings.getProperty("ServerNate").getBytes("ISO-8859-1"), "euc-kr");
-			/** �����̸� �ܺ�ȭ **/
-
-			/** ������ ���̽� Ǯ */
+			
 			min = Integer.parseInt(serverSettings.getProperty("min"));
 			max = Integer.parseInt(serverSettings.getProperty("max"));
 			run = Boolean.parseBoolean(serverSettings.getProperty("run"));
@@ -684,7 +674,7 @@ public static int MAX_LEVEL;  //�űԺ�ȣ����
 			LOGGING_CHAT_CHAT_PARTY = Boolean.parseBoolean(serverSettings
 					.getProperty("LoggingChatChatParty", "false"));
 			
-			SPEEDUP_SPEEDMENT = Integer.parseInt(serverSettings.getProperty("Speedment", "0"));//���ӱ� ������ �ܺ�ȭ
+			SPEEDUP_SPEEDMENT = Integer.parseInt(serverSettings.getProperty("Speedment", "0"));
 
 			AUTOSAVE_INTERVAL = Integer.parseInt(serverSettings.getProperty(
 					"AutosaveInterval", "1200"), 10);
@@ -723,11 +713,7 @@ public static int MAX_LEVEL;  //�űԺ�ȣ����
 			DETECT_DB_RESOURCE_LEAKS = Boolean.parseBoolean(serverSettings
 					.getProperty("EnableDatabaseResourceLeaksDetection",
 							"false"));
-			ACCOUNT_LIMIT = Integer.parseInt(serverSettings.getProperty( // IP��
-					// ����
-					// ����
-					// ����
-					// �ܺ�ȭ
+			ACCOUNT_LIMIT = Integer.parseInt(serverSettings.getProperty(
 					"AccountLimit", "1"));
 		} catch (Exception e) {
 			_log.log(Level.SEVERE, "Config/server.properties", e);
@@ -753,11 +739,11 @@ public static int MAX_LEVEL;  //�űԺ�ȣ����
 			
 			RATE_XP = Double.parseDouble(rateSettings.getProperty("RateXp","1.0"));
 
-			RATE_CCLAN_XP = Double.parseDouble(rateSettings.getProperty("RateCclanXp", "1.0")); // ��������ġ�ܺ�ȭ�߰�
+			RATE_CCLAN_XP = Double.parseDouble(rateSettings.getProperty("RateCclanXp", "1.0"));
 			
-			RATE_CCLAN_XP1 = Double.parseDouble(rateSettings.getProperty("RateCclanXp1", "1.0")); // ����5���̻�
+			RATE_CCLAN_XP1 = Double.parseDouble(rateSettings.getProperty("RateCclanXp1", "1.0")); 
 			
-			CLAN_BUFFTIME = Integer.parseInt(rateSettings.getProperty("Clan_bufftime", "30")); //���Ϳ�30���̻��ϰ�����
+			CLAN_BUFFTIME = Integer.parseInt(rateSettings.getProperty("Clan_bufftime", "30"));
 
 			RATE_LAWFUL = Double.parseDouble(rateSettings.getProperty("RateLawful", "1.0"));
 
@@ -766,28 +752,28 @@ public static int MAX_LEVEL;  //�űԺ�ȣ����
 			RATE_DROP_ADENA = Double.parseDouble(rateSettings.getProperty("RateDropAdena", "50.0"));
 
 			RATE_DROP_ITEMS = Double.parseDouble(rateSettings.getProperty("RateDropItems", "10.0"));
-			// ���������� 
-			RATE_JOIN_CLAN_FULL = Integer.parseInt(rateSettings.getProperty("joinclan", "0")); // ����������
-			// ���������� 
-			RATE_ROBOT_TIME = Integer.parseInt(rateSettings.getProperty("RateRobotTime", "12")); // ����PC
+			
+			RATE_JOIN_CLAN_FULL = Integer.parseInt(rateSettings.getProperty("joinclan", "0")); 
+			
+			RATE_ROBOT_TIME = Integer.parseInt(rateSettings.getProperty("RateRobotTime", "12"));
 
 			ENCHANT_CHANCE_WEAPON = Integer.parseInt(rateSettings.getProperty("EnchantChanceWeapon", "30"));
 
 			ENCHANT_CHANCE_ARMOR = Integer.parseInt(rateSettings.getProperty("EnchantChanceArmor", "52"));
 			
-			//��þ����
+		
 			ENCHANT_CHANCE_ACCESSORY = Integer.parseInt(rateSettings.getProperty("EnchantChanceAccessory", "5"));
 
 			RATE_WEIGHT_LIMIT = Double.parseDouble(rateSettings.getProperty("RateWeightLimit", "1"));
 			
 
-			//�̺�Ʈ�縻
+			
 			RATE_LOTTO_TIME = Integer.parseInt(rateSettings .getProperty("RateLottoTime", "1"));
 		    
 			RATE_LOTTO_NUMBER = Integer.parseInt(rateSettings.getProperty("RateLottoNumber", "2")); // #####
 
 			RATE_LOTTO_ITEM = Integer.parseInt(rateSettings.getProperty("RateLottoItem", "40308")); // #####
-			//�̺�Ʈ�縻
+			
 			
 
 			RATE_WEIGHT_LIMIT_PET = Double.parseDouble(rateSettings.getProperty("RateWeightLimitforPet", "1"));
@@ -796,7 +782,7 @@ public static int MAX_LEVEL;  //�űԺ�ȣ����
 
 			RATE_SHOP_PURCHASING_PRICE = Double.parseDouble(rateSettings.getProperty("RateShopPurchasingPrice", "1.0"));
 			
-			RATE_SILVER = Integer.parseInt(rateSettings.getProperty("RateSilver", "1")); //��������Ʈ �߰�
+			RATE_SILVER = Integer.parseInt(rateSettings.getProperty("RateSilver", "1"));
 
 			FEATHER_TIME = Integer.parseInt(rateSettings.getProperty("FeatherTime", "10"));
 			
@@ -818,7 +804,7 @@ public static int MAX_LEVEL;  //�űԺ�ȣ����
 
 			CREATE_CHANCE_PROCESSING_DIAMOND = Integer.parseInt(rateSettings.getProperty("CreateChanceProcessingDiamond", "90"));
 
-			MAX_LEVEL = Integer.parseInt(rateSettings.getProperty("Maxlevel", "12"));//�űԺ�ȣ����
+			MAX_LEVEL = Integer.parseInt(rateSettings.getProperty("Maxlevel", "12"));
 			
 			CREATE_CHANCE_DANTES = Integer.parseInt(rateSettings.getProperty("CreateChanceDantes", "90"));
 
@@ -870,7 +856,7 @@ public static int MAX_LEVEL;  //�űԺ�ȣ����
 
 			WHISPER_CHAT_LEVEL = Short.parseShort(altSettings.getProperty("WhisperChatLevel", "7"));
 			
-			BRTIME = Short.parseShort(altSettings.getProperty("bugbareracetime", "6"));//�����Ʈ�߰�
+			BRTIME = Short.parseShort(altSettings.getProperty("bugbareracetime", "6"));
 			
 			AUTO_LOOT = Byte.parseByte(altSettings.getProperty("AutoLoot", "2"));
 			
@@ -880,9 +866,9 @@ public static int MAX_LEVEL;  //�űԺ�ȣ����
 
 			ALT_ATKMSG = Boolean.parseBoolean(altSettings.getProperty("AttackMessageOn", "true"));
 			
-			R_ATKMSG = Boolean.parseBoolean(altSettings.getProperty("RMessageOn", "true"));//�κ���âä��
+			R_ATKMSG = Boolean.parseBoolean(altSettings.getProperty("RMessageOn", "true"));
 			
-			R_ATKMSG2 = Boolean.parseBoolean(altSettings.getProperty("RMessageOn2", "true"));//�κ����ä��
+			R_ATKMSG2 = Boolean.parseBoolean(altSettings.getProperty("RMessageOn2", "true"));
 			ALT_DROPLEVELLIMIT = Integer.parseInt(altSettings.getProperty("DropLevelLimit", "90"));
 			CHANGE_TITLE_BY_ONESELF = Boolean.parseBoolean(altSettings.getProperty("ChangeTitleByOneself", "false"));
 
@@ -920,9 +906,9 @@ public static int MAX_LEVEL;  //�űԺ�ȣ����
 			ALT_WITS_PRESENT_COUNT = new String(altSettings.getProperty("WitsPresentCount"));
 			
 			WHOIS_CONTER = Integer.parseInt(altSettings.getProperty(
-					"WhoisConter", "0")); // ��Ƽ��
+					"WhoisConter", "0")); 
 			UB_SEAL_ITEM = Integer.parseInt(altSettings.getProperty(
-					"UbSealItem", "41402"));// ���뺸����
+					"UbSealItem", "41402"));
 			ALT_WHO_COMMAND = Boolean.parseBoolean(altSettings.getProperty(
 					"WhoCommand", "false"));
 
@@ -999,7 +985,6 @@ public static int MAX_LEVEL;  //�űԺ�ȣ����
 			DELETE_DB_DAYS = Integer.parseInt(altSettings.getProperty("DeleteDBDAY", "10"));
 			ALT_SCARECROW_CLASS_CHANCE = new String(altSettings.getProperty("ScarecrowClassChance"));
 			
-			//�̴ϰ�����
 			MINIWAR_LOOPTIME = Integer.parseInt(altSettings.getProperty("MiniWarLoop", "6"));
 			
 			MINIWAR_ATEAM_X = Integer.parseInt(altSettings.getProperty("MiniWarAteamX", "33333"));
@@ -1036,7 +1021,7 @@ public static int MAX_LEVEL;  //�űԺ�ȣ����
 			DRAGONKNIGHT_ADD_DAMAGE = Integer.parseInt(charSettings.getProperty("DragonknightAddDamage", "0"));
 
 			BLACKWIZARD_ADD_DAMAGE = Integer.parseInt(charSettings.getProperty("BlackwizardAddDamage", "0"));
-			/**������� */
+			
 			PRINCE_ADD_DAMAGEPC = Integer.parseInt(charSettings.getProperty("PrinceAddDamagePc", "0"));
 
 			KNIGHT_ADD_DAMAGEPC = Integer.parseInt(charSettings.getProperty("KnightAddDamagePc", "0"));
@@ -1093,7 +1078,7 @@ public static int MAX_LEVEL;  //�űԺ�ȣ����
 			BLACKWIZARD_MAX_MP = Integer.parseInt(charSettings.getProperty(
 					"BlackwizardMaxMP", "1100"));
 			
-			LimitLevel = Integer.parseInt(charSettings.getProperty("LimitLevel", "12"));//�������� (��������)
+			LimitLevel = Integer.parseInt(charSettings.getProperty("LimitLevel", "12"));
 			
 			RESTRICTION_LEVEL = Integer.parseInt(charSettings.getProperty("RestrictionLevel", "99"));
 
@@ -1202,7 +1187,6 @@ public static int MAX_LEVEL;  //�űԺ�ȣ����
 			throw new Error("Failed to Load " + CHAR_SETTINGS_CONFIG_FILE
 					+ " File.");
 		}
-//�ڵ�����
 	     try {
 	      Properties othersettings = new Properties();
 	      InputStream is = new FileInputStream(new File(OTHER_SETTINGS_CONFIG_FILE));
@@ -1215,7 +1199,6 @@ public static int MAX_LEVEL;  //�űԺ�ȣ����
 	    	 _log.log(Level.SEVERE, "config/othersettings.properties", e);
 	       throw new Error("Failed to Load " + OTHER_SETTINGS_CONFIG_FILE + " File.");
 	     }
-//�ڵ�����
 		validate();
 	}
 
@@ -1233,7 +1216,7 @@ public static int MAX_LEVEL;  //�űԺ�ȣ����
 
 	public static boolean setParameterValue(String pName, String pValue) {
 		// server.properties
-		/** �����̸� �ܺ�ȭ **/
+		
 		if (pName.equalsIgnoreCase("ServerName")) {
 			try {
 				SERVER_NAME = new String(pValue.getBytes("ISO-8859-1"), "euc-kr");
@@ -1252,21 +1235,21 @@ public static int MAX_LEVEL;  //�űԺ�ȣ����
 			} catch (UnsupportedEncodingException e) {
 				e.printStackTrace();
 			}			
-			/** �����̸� �ܺ�ȭ **/
+			
 		} else if (pName.equalsIgnoreCase("ServerType")) {
 			GAME_SERVER_TYPE = Integer.parseInt(pValue);
 		} else if (pName.equalsIgnoreCase("GameserverHostname")) {
 			GAME_SERVER_HOST_NAME = pValue;
-		} else if (pName.equalsIgnoreCase("AccountLimit")) { // IP�� ���� ���� ����
-			// �ܺ�ȭ
+		} else if (pName.equalsIgnoreCase("AccountLimit")) { 
+			
 			ACCOUNT_LIMIT = Integer.parseInt(pValue);
 		} else if (pName.equalsIgnoreCase("GameserverPort")) {
 			GAME_SERVER_PORT = Integer.parseInt(pValue);
 		} else if (pName.equalsIgnoreCase("UbSealItem")) {
-			UB_SEAL_ITEM = Integer.valueOf(pValue);// ���뺸����
-		} else if (pName.equalsIgnoreCase("UseShowAnnouncecycle")) { //�ڵ�����
+			UB_SEAL_ITEM = Integer.valueOf(pValue);
+		} else if (pName.equalsIgnoreCase("UseShowAnnouncecycle")) { 
 			 Use_Show_Announcecycle = Boolean.valueOf(pValue);
-		} else if (pName.equalsIgnoreCase("ShowAnnouncecycleTime")) { //�ڵ�����
+		} else if (pName.equalsIgnoreCase("ShowAnnouncecycleTime")) { 
 			 Show_Announcecycle_Time = Integer.parseInt(pValue);
 		} else if (pName.equalsIgnoreCase("WitsPresent")) {
 			ALT_WITS_PRESENT = pValue;
@@ -1302,17 +1285,17 @@ public static int MAX_LEVEL;  //�űԺ�ȣ����
 			LEVEL_DOWN_RANGE = Integer.parseInt(pValue);
 		} else if (pName.equalsIgnoreCase("SendPacketBeforeTeleport")) {
 			SEND_PACKET_BEFORE_TELEPORT = Boolean.parseBoolean(pValue);
-	     }else if (pName.equalsIgnoreCase("Speedment")) {//���ӱ� ������ �ܺ�ȭ
+	     }else if (pName.equalsIgnoreCase("Speedment")) {
 	      SPEEDUP_SPEEDMENT = Integer.parseInt(pValue);
 	     }
 		// rates.properties
 		else if (pName.equalsIgnoreCase("RateXp")) {
 			RATE_XP = Double.parseDouble(pValue);
 		} else if (pName.equalsIgnoreCase("RateCclanXp")) {
-			RATE_CCLAN_XP = Double.parseDouble(pValue); // ��������ġ�ܺ�ȭ�߰�
+			RATE_CCLAN_XP = Double.parseDouble(pValue); 
 		
 		} else if (pName.equalsIgnoreCase("RateCclanXp1")) {
-			RATE_CCLAN_XP1 = Double.parseDouble(pValue); // ��������ġ�ܺ�ȭ�߰�
+			RATE_CCLAN_XP1 = Double.parseDouble(pValue); 
 				
 			
 		} else if (pName.equalsIgnoreCase("RateLawful")) {
@@ -1363,7 +1346,7 @@ public static int MAX_LEVEL;  //�űԺ�ȣ����
 		} else if (pName.equalsIgnoreCase("WhisperChatLevel")) {
 			WHISPER_CHAT_LEVEL = Short.parseShort(pValue);
 		} else if (pName.equalsIgnoreCase("bugbareracetime")) {
-			BRTIME = Short.parseShort(pValue);//�����Ʈ�߰�
+			BRTIME = Short.parseShort(pValue);
 		} else if (pName.equalsIgnoreCase("AutoLoot")) {
 			AUTO_LOOT = Byte.parseByte(pValue);
 		} else if (pName.equalsIgnoreCase("LOOTING_RANGE")) {
@@ -1372,9 +1355,9 @@ public static int MAX_LEVEL;  //�űԺ�ȣ����
 			ALT_NONPVP = Boolean.valueOf(pValue);
 		} else if (pName.equalsIgnoreCase("AttackMessageOn")) {
 			ALT_ATKMSG = Boolean.valueOf(pValue);
-		} else if (pName.equalsIgnoreCase("RMessageOn")) {//�κ���âä��
+		} else if (pName.equalsIgnoreCase("RMessageOn")) {
 			R_ATKMSG = Boolean.valueOf(pValue);
-		} else if (pName.equalsIgnoreCase("RMessageOn2")) {//�κ����ä��
+		} else if (pName.equalsIgnoreCase("RMessageOn2")) {
 			R_ATKMSG2 = Boolean.valueOf(pValue);
 		} else if (pName.equalsIgnoreCase("ChangeTitleByOneself")) {
 			CHANGE_TITLE_BY_ONESELF = Boolean.valueOf(pValue);

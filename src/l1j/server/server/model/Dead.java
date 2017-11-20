@@ -5,6 +5,7 @@ import java.util.Collection;
 import l1j.server.GameSystem.CrockSystem;
 import l1j.server.server.model.Instance.L1DoorInstance;
 import l1j.server.server.model.Instance.L1MonsterInstance;
+import l1j.server.server.model.Instance.L1PcInstance;
 
 public class Dead /*implements Runnable*/ {
 	private L1Character lastAttacker;
@@ -30,10 +31,12 @@ public class Dead /*implements Runnable*/ {
 
 	public void run() {
 		try{
-		mob.die(lastAttacker);		
-		doSomething();		
-		calcDamageInCrystalCave();		
-		openAntDoor();
+			//L1World.getInstance().broadcastServerMessage("Die");
+					
+			mob.die(lastAttacker);
+			doSomething();		
+			calcDamageInCrystalCave();		
+			openAntDoor();
 		}catch(Exception e){}
 	}
 

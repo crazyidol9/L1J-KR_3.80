@@ -11,7 +11,7 @@ public class GameServerSetting extends Thread {
 		return _instance;
 	}
 
-	/** Server Manager 1 ���� �κ� * */
+	/** Server Manager 1 **/
 	 public static boolean isNormal = false;
 	 public static boolean isWishper = false;
 	 public static boolean isGlobal = false;
@@ -26,7 +26,6 @@ public class GameServerSetting extends Thread {
 
 	public static boolean ServerDown = false;
 
-	// /////////�̺�Ʈ/////////////////
 	public static boolean event = false;
 
 	public static String evenMoment = "";
@@ -35,8 +34,6 @@ public class GameServerSetting extends Thread {
 
 	public static int eventMapItems = 0;
 
-	// /////////�̺�Ʈ/////////////////
-	// ///////////��������/////////////
 	private int maxLevel = 100;
 
 	public int get_maxLevel() {
@@ -47,7 +44,6 @@ public class GameServerSetting extends Thread {
 		this.maxLevel = maxLevel;
 	}
 
-	// ///////////��������/////////////
 	private GameServerSetting() {
 	}
 

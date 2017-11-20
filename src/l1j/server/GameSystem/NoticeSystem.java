@@ -40,18 +40,9 @@ public class NoticeSystem implements TimeListener {
 				switch (_type) {
 				case 1:
 					L1World.getInstance().set_worldChatElabled(false);
-				//	L1World.getInstance().broadcastPacketToAll(
-					//		new S_SystemMessage("�ȳ��ϼ���. ������ �Դϴ�."));
-					//Thread.sleep(1000);
 					L1World.getInstance().broadcastPacketToAll(
 							new S_SystemMessage("After " + _msg + "war of endless town begins."));
 					Thread.sleep(1000);
-				//	L1World.getInstance().broadcastPacketToAll(
-						//	new S_SystemMessage("���Ѵ����� ����ǿ��� ���� ���� �ٶ��ϴ�."));
-					//Thread.sleep(1000);
-				//	L1World.getInstance().broadcastPacketToAll(
-						//	new S_SystemMessage("�����մϴ�."));
-					//Thread.sleep(1000);
 					L1World.getInstance().set_worldChatElabled(true);
 					break;
 				case 2:

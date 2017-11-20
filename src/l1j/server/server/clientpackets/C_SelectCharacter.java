@@ -531,9 +531,9 @@ public class C_SelectCharacter extends ClientBasePacket {
 			pc.sendPackets(new S_SystemMessage("변신 이벤트가 진행중 입니다."));
 		}
 		// /////////////////변신이벤트//////////////////
-		if (GameServerSetting.이벤트) {
-			if (GameServerSetting.이벤트멘트 != null) {
-				pc.sendPackets(new S_SystemMessage(""+ GameServerSetting.이벤트멘트));
+		if (GameServerSetting.event) {
+			if (GameServerSetting.evenMoment != null) {
+				pc.sendPackets(new S_SystemMessage(""+ GameServerSetting.evenMoment));
 			}
 		}
 		if (pc.getLevel() >= 51

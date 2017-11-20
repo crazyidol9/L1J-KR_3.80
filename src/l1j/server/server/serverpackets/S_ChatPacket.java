@@ -51,10 +51,9 @@ public class S_ChatPacket extends ServerBasePacket {
 		writeC(opcode);
 		switch (type) {
 		case 0:
-
 			writeC(type);
 			writeD(pc.getId());
-			writeS(pc.getName() + ": " + chat);
+			writeS(pc.getName() + ": " + chat);				
 			break;
 		case 2:
 			writeC(type);

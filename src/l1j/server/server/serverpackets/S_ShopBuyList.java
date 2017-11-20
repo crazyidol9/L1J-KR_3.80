@@ -65,7 +65,7 @@ public class S_ShopBuyList extends ServerBasePacket {
 			pc.sendPackets(new S_NoSell(npc));
 			return;
 		}
-
+		
 		writeC(Opcodes.S_OPCODE_SHOWSHOPSELLLIST);
 		writeD(objid);
 		writeH(assessedItems.size());

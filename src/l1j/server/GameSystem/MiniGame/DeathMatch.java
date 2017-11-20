@@ -247,7 +247,6 @@ public class DeathMatch extends MiniGame implements Runnable {
 		L1PcInstance pc;
 		for (int i = 0; i < getPlayerMemberCount(); i++) {
 			pc = playmembers.get(i);
-			// ��� �ּ� �ο��� 5���� �������� �ʾ� ��⸦ ���� ���� �մϴ�. 1000 �Ƶ����� ���� ��Ƚ��ϴ�.
 			pc.sendPackets(new S_ServerMessage(1270));
 			pc.getInventory().storeItem(40308, 1000); // 1000 �Ƶ��� ����
 			L1Teleport.teleport(pc, 32624, 32813, (short) 4, 5, true);
@@ -258,7 +257,6 @@ public class DeathMatch extends MiniGame implements Runnable {
 		L1PcInstance pc;
 		for (int i = 0; i < getPlayerMemberCount(); i++) {
 			pc = playmembers.get(i);
-			// ������ġ �������� - ����
 			pc.getInventory().storeItem(L1ItemId.DEATHMATCH_POTION_BOX, 1);
 			pc.sendPackets(new S_ServerMessage(1269));
 		}
@@ -282,11 +280,10 @@ public class DeathMatch extends MiniGame implements Runnable {
 			}
 
 			/*
-			 * addEnterMember(pc); ���� �κ� �ּ� pc.sendPackets(new
+			 * addEnterMember(pc); 
 			 * S_ServerMessage(1265, Integer.toString(getEnterMemberCount())));
 			 */
 		} else {
-			// �̹� ������ġ ���� ����Ǿ��ֽ��ϴ�.
 			pc.sendPackets(new S_ServerMessage(1266));
 		}
 	}

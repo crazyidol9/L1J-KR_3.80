@@ -79,10 +79,9 @@ public class IceDemonController implements Runnable {
 		}
 	}
 
-	/** ��ǥ �� ���� �𸣰ٰ� ���� ����������� */
+
 	private void SpawnMonster() {
 		int ran = 0;
-		/** 1���� �Ѹ��� */
 		for (int i = 0; i < 15; i++) {
 			ran = CommonUtil.random(_MonsterList.length);
 			L1SpawnUtil.spawn5(32765, 32818, (short) 2151, 6,
@@ -97,7 +96,6 @@ public class IceDemonController implements Runnable {
 		L1SpawnUtil.spawn5(32772, 32802, (short) 2151, 6, _MonsterList[ran], 0,
 				2, 1);
 
-		/** 2�� �� �Ѹ��� */
 		L1SpawnUtil.spawn5(32813, 32805, (short) 2151, 6,
 				_MonsterList[CommonUtil.random(_MonsterList.length)], 0, 2, 2);
 		L1SpawnUtil.spawn5(32819, 32807, (short) 2151, 6,
@@ -110,7 +108,6 @@ public class IceDemonController implements Runnable {
 					_MonsterList[ran], 13, 2, 2);
 		}
 
-		/** 3�� �� �Ѹ��� */
 		L1SpawnUtil.spawn5(32859, 32832, (short) 2151, 6,
 				_MonsterList[CommonUtil.random(_MonsterList.length)], 0, 2, 3);
 		L1SpawnUtil.spawn5(32857, 32831, (short) 2151, 6,
@@ -123,20 +120,17 @@ public class IceDemonController implements Runnable {
 					_MonsterList[ran], 10, 2, 3);
 		}
 
-		/** 4�� �� �Ѹ��� */
 		for (int i = 0; i < 15; i++) {
 			ran = CommonUtil.random(_MonsterList.length);
 			L1SpawnUtil.spawn5(32767, 32892, (short) 2151, 6,
 					_MonsterList[ran], 12, 2, 4);
 		}
 
-		/** 5�� �� �Ѹ��� ( ���� ���� �߰� : ���̽� ���� ) */
 		for (int i = 0; i < 15; i++) {
 			ran = CommonUtil.random(_MonsterList.length);
 			L1SpawnUtil.spawn5(32767, 32892, (short) 2151, 6,
 					_MonsterList[ran], 12, 2, 5);
 		}
-		/** ���̽����� */
 		L1SpawnUtil.spawn5(32845, 32920, (short) 2151, 6, 46142, 0, 2, 5);
 		L1SpawnUtil.spawn5(32833, 32916, (short) 2151, 6, 46119, 0, 1, 5);
 		L1SpawnUtil.spawn5(32832, 32926, (short) 2151, 6, 46120, 0, 1, 5);
@@ -158,7 +152,6 @@ public class IceDemonController implements Runnable {
 			}
 		} else {
 			openDoor(5000);
-			/** ù��° �� ����. */
 			FirstRoom = false;
 			SecondRoom = true;
 		}
@@ -174,7 +167,6 @@ public class IceDemonController implements Runnable {
 			}
 		} else {
 			openDoor(5001);
-			/** �ι�° �� ����. */
 			SecondRoom = false;
 			ThirdRoom = true;
 		}
@@ -190,7 +182,6 @@ public class IceDemonController implements Runnable {
 			}
 		} else {
 			openDoor(5002);
-			/** ����° �� ����. */
 			ThirdRoom = false;
 			FourthRoom = true;
 		}
@@ -206,7 +197,6 @@ public class IceDemonController implements Runnable {
 			}
 		} else {
 			openDoor(5003);
-			/** �׹�° �� ����. */
 			FourthRoom = false;
 			BossRoom = true;
 		}
@@ -222,7 +212,6 @@ public class IceDemonController implements Runnable {
 			}
 		} else {
 			openDoor(5004);
-			/** �ټ���° �� ����. */
 			BossRoom = false;
 		}
 	}
@@ -250,7 +239,6 @@ public class IceDemonController implements Runnable {
 		}
 	}
 
-	/** ������ ��ȯ���� ������ üũ���� ���� */
 	private void CheckPc() {
 		int check = 0;
 		for (L1Object obj : L1World.getInstance().getVisibleObjects(2151)
@@ -264,7 +252,6 @@ public class IceDemonController implements Runnable {
 		}
 	}
 
-	/** ������ ��Ʈ�˸��� */
 	private void CountMob(L1PcInstance pc) {
 		if (FirstRoom) {
 			pc.sendPackets(new S_SystemMessage("\\fTThe current number of room remaining mobs are [ "
@@ -352,7 +339,6 @@ public class IceDemonController implements Runnable {
 		}
 	}
 
-	/** ���� ����Ʈ */
 	private final ArrayList<L1NpcInstance> _list1 = new ArrayList<L1NpcInstance>();
 	private final ArrayList<L1NpcInstance> _list2 = new ArrayList<L1NpcInstance>();
 	private final ArrayList<L1NpcInstance> _list3 = new ArrayList<L1NpcInstance>();

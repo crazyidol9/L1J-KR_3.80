@@ -38,58 +38,58 @@ import server.LineageClient;
 import server.manager.eva;
 
 public class Account {
-	/** ������ */
+	
 	private String _name;
 
-	/** ������ IP�ּ� */
+	
 	private String _ip;
 
-	/** �н�����(��ȣȭ ��) */
+	
 	private String _password;
 
-	/** �ֱ� ������ */
+	
 	private Timestamp _lastActive;
 
-	/** ������ ���(GM�ΰ�?) */
+	
 	private int _accessLevel;
 
-	/** ������ ȣ��Ʈ�� */
+	
 	private String _host;
 
-	/** �� ����(True == ����) */
+	
 	private boolean _banned;
 
-	/** ���� ��ȿ ����(True == ��ȿ) */
+	
 	private boolean _isValid = false;
 
-	/** ĳ���� ����(�°��ǿ���) */
+	
 	private int _charslot;
 
-	/** â�� ��й�ȣ */
+	
 	private int _GamePassword;
 
-	/** ���� �ð� */
+	
 	private int _AccountTime;
 
-	/** ���� �ð� ���� �� */
+	
 	private int _AccountTimeRead;
 	
-	/** �޼��� �α׿� */
+	
 	private static Logger _log = Logger.getLogger(Account.class.getName());
 
 	public Account() {
 	}
 
 	/**
-	 * �н����带 ��ȣȭ�Ѵ�.
+	 * 
 	 * 
 	 * @param rawPassword
-	 *            �н�����
+	 *            
 	 * @return String
 	 * @throws NoSuchAlgorithmException
-	 *             ��ȣȭ �˰����� ����� �� ���� ��
+	 *             
 	 * @throws UnsupportedEncodingException
-	 *             ���ڵ��� �������� ���� ��
+	 *             
 	 */
 	private static String encodePassword(final String rawPassword)
 			throws NoSuchAlgorithmException, UnsupportedEncodingException {
@@ -99,16 +99,16 @@ public class Account {
 	}
 
 	/**
-	 * �ű� ���� ����
+	 * 
 	 * 
 	 * @param name
-	 *            ������
+	 *            
 	 * @param rawPassword
-	 *            �н�����
+	 *            
 	 * @param ip
-	 *            ������ IP�ּ�
+	 *            
 	 * @param host
-	 *            ������ ȣ��Ʈ��
+	 *            
 	 * @return Account
 	 */
 	public static Account create(final String name, final String rawPassword,
@@ -144,8 +144,7 @@ public class Account {
 			pstm.setInt(12, 0);
 			pstm.execute();
 			_log.info("created new account for " + name);
-			CodeLogger.getInstance().loginlog("�α���" , name);  
-		//	eva.writeMessage(19, name + "�� �̸����� ������ �����Ǿ����ϴ�." + "("+ ip +")"); //�߰�
+			CodeLogger.getInstance().loginlog("��������" , name);  
 			eva.LogServerAppend("Generation", name + "This account has been created in the name." + "("+ ip +")");
 
 			return account;
@@ -201,10 +200,10 @@ public class Account {
 
 	
 	/**
-	 * DB���� ���� ���� �ҷ�����
+	 * DB
 	 * 
 	 * @param name
-	 *            ������
+	 *   
 	 * @return Account
 	 */
 
@@ -260,10 +259,10 @@ public class Account {
 	}
 
 	/**
-	 * DB�� �ֱ� ������ ������Ʈ
+	 * DB
 	 * 
 	 * @param account
-	 *            ������
+	 *   
 	 */
 	public static void updateLastActive(final Account account) {
 		Connection con = null;
@@ -289,10 +288,10 @@ public class Account {
 	}
 
 	/**
-	 * ���н����������;
+	 * 
 	 * 
 	 * @param account
-	 *            ������
+	 *            
 	 */
 	public static void updateWebPwd(String AccountName, String pwd) {
 		Connection con = null;
@@ -314,9 +313,9 @@ public class Account {
 	}
 
 	/**
-	 * �ش� ������ ĳ���ͼ��� ��
 	 * 
-	 * @return result ĳ���ͼ�
+	 * 
+	 * @return result 
 	 */
 	public int countCharacters() {
 		int result = 0;
@@ -427,14 +426,14 @@ public class Account {
 			}
 		}
 	/**
-	 * �Էµ� ��й�ȣ�� DB�� ����� �н����带 ��
+	 * 
 	 * 
 	 * @param rawPassword
-	 *            �н�����
+	 * 
 	 * @return boolean
 	 */
 	public boolean validatePassword(String accountName, final String rawPassword) {
-		// ���� ���� �Ŀ� ���� �����Ǿ��� ���� ���н�Ų��.
+		
 		// if (_isValid) {
 		// return false;
 		// }
@@ -442,7 +441,7 @@ public class Account {
 			_isValid = (_password.equals(/*encodePassword(*/rawPassword)/*)*/ || checkPassword(
 					accountName, _password, rawPassword));
 			if (_isValid) {
-				_password = null; // ������ �������� ���, �н����带 �ı��Ѵ�.
+				_password = null; 
 			}
 			return _isValid;
 		} catch (Exception e) {
@@ -452,7 +451,7 @@ public class Account {
 	}
 
 	/**
-	 * ��ȿ�� �����ΰ�
+	 * 
 	 * 
 	 * @return boolean
 	 */
@@ -461,7 +460,7 @@ public class Account {
 	}
 
 	/**
-	 * GM �����ΰ�
+	 * GM
 	 * 
 	 * @return boolean
 	 */
@@ -494,7 +493,7 @@ public class Account {
 	}
 	
 	/**
-	 * ����ó�� ����Ѵ�.
+	 * 
 	 * 
 	 * @return String
 	 */
@@ -509,7 +508,7 @@ public class Account {
 	}
 	
 	/**
-	 * ��� ����Ѵ�.
+	 * 
 	 * 
 	 * @return String
 	 */
@@ -528,7 +527,7 @@ public class Account {
 	}
 
 	/**
-	 * �ɸ��� ���Լ� ����
+	 * 
 	 * 
 	 * @return boolean
 	 */
@@ -572,9 +571,7 @@ public class Account {
 			SQLUtil.close(pstm);
 			SQLUtil.close(con);
 
-			// ���� IP�� ������ ������ 2�� �̸��� ���
-			//if (num < 10000) //������
-			if (num < 2) //����
+			if (num < 2)
 				return false;
 			else
 				return true;
@@ -588,7 +585,6 @@ public class Account {
 		return false;
 	}
 
-	// �� ������ ���� �޼ҵ� �߰� - By Sini
 	public static boolean checkPassword(String accountName, String _pwd,
 			String rawPassword) {
 		String _inputPwd = null;
@@ -607,7 +603,7 @@ public class Account {
 			SQLUtil.close(rs);
 			SQLUtil.close(pstm);
 			SQLUtil.close(con);
-			if (_pwd.equals(_inputPwd)) { // �����ϴٸ�
+			if (_pwd.equals(_inputPwd)) { 
 				return true;
 			} else
 				return false;
@@ -622,7 +618,7 @@ public class Account {
 	}
 
 	/**
-	 * â�� ���
+	 * 
 	 * 
 	 * @return boolean
 	 */
@@ -650,10 +646,10 @@ public class Account {
 	}
 
 	/**
-	 * �α׾ƿ��� ���� ����Ʈ ������ Ÿ���� �����Ų��;
+	 * 
 	 * 
 	 * @param account
-	 *            ������
+	 *            
 	 */
 	public static void updatePointAccount(String AccountName, long time) {
 		Connection con = null;
@@ -701,7 +697,7 @@ public class Account {
 		return _AccountTimeRead;
 	}
 
-	// ########## A62 IP�� ���� ���� ����
+	// ########## A62 IP
 	public static boolean Check_LoginIP(String ip) {
 		int num = 0;
 		Connection con = null;
@@ -733,6 +729,6 @@ public class Account {
 		}
 		return false;
 	}
-	// ########## A62 IP�� ���� ���� ����
+	// ########## A62 IP
 
 }

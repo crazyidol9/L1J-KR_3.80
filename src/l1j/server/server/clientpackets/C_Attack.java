@@ -69,16 +69,16 @@ public class C_Attack extends ClientBasePacket {
 		if (pc.isInvisble()) { return; }
 		if (pc.isInvisDelay()) { return; }
 		
+		
 		if (pc.getMapId() == 350) {
 			pc.sendPackets(new S_SystemMessage("시장 안에서는 공격이 불가능합니다."));
 			return;
 		}
 		if (pc.getInventory().getWeight240() >= 200) {
-			pc.sendPackets(new S_ServerMessage(110)); // \f1아이템이 너무 무거워 전투할 수가
-			// 없습니다.
+			pc.sendPackets(new S_ServerMessage(110)); // \f1아이템이 너무 무거워 전투할 수가 없습니다.
 			return;
 		}
-				if (target instanceof L1Character) {
+		if (target instanceof L1Character) {
 			if (target.getMapId() != pc.getMapId()
 					|| pc.getLocation().getLineDistance(target.getLocation()) > 20D) { // 타겟이 이상한 장소에 있으면(자) 종료
 				return;
@@ -147,8 +147,7 @@ public class C_Attack extends ClientBasePacket {
 		}
 		// 공격 액션을 취할 수 있는 경우의 처리
 		if (pc.getSkillEffectTimerSet().hasSkillEffect(
-				L1SkillId.ABSOLUTE_BARRIER)) { // 아브소르트바리아의
-			// 해제
+				L1SkillId.ABSOLUTE_BARRIER)) { // 아브소르트바리아의 해제
 			pc.getSkillEffectTimerSet().killSkillEffectTimer(
 					L1SkillId.ABSOLUTE_BARRIER);
 			pc.startHpRegenerationByDoll();
@@ -164,14 +163,14 @@ public class C_Attack extends ClientBasePacket {
 			pc.getSkillEffectTimerSet().killSkillEffectTimer(
 					L1SkillId.MEDITATION);
 		}
-
+		
 		pc.delInvis();
 		pc.setRegenState(REGENSTATE_ATTACK);
 		boolean ck = false;
 		if (target != null)
 			ck = !((L1Character) target).isDead();
 
-		if (target != null && ck) {
+		if (target != null && ck) {			
 			target.onAction(pc);
 		} else { // 하늘 공격
 			// TODO 활로 지면에 하늘 공격했을 경우는 화살이 날지 않으면 안 된다
@@ -194,7 +193,6 @@ public class C_Attack extends ClientBasePacket {
 			if (weaponType == 20
 					&& (weaponId == 190
 							|| (weaponId >= 11011 && weaponId <= 11013) || arrow != null)) { // 추가
-				calcOrbit(pc.getX(), pc.getY(), pc.getMoveState().getHeading());
 				if (arrow != null) {
 					if (pc.getGfxId().getTempCharGfx() == 7968) {
 						pc.sendPackets(new S_UseArrowSkill(pc, 0, 7972,

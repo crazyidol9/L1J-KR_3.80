@@ -29,7 +29,6 @@ public class IceQueenController implements Runnable {
 		return _instance;
 	}
 
-	/** ��üũ */
 	int[] _MonsterList = { 46119, 46120, 46153, 46154, 46123 };
 	public int _mapid = 0;
 	public boolean Start = false;
@@ -39,12 +38,12 @@ public class IceQueenController implements Runnable {
 	private boolean FourthRoom = false;
 	private boolean BossRoom = false;
 	private boolean End = false;
-	private int Time = 1200;// 900�ʿ� 1��
+	private int Time = 1200;
 
 	public void run() {
 		Start = true;
 		FirstRoom = true;
-		Time = 1200;// 900�ʿ� 1��
+		Time = 1200;
 		SpawnMonster();
 		while (true) {
 			try {
@@ -77,10 +76,9 @@ public class IceQueenController implements Runnable {
 		}
 	}
 
-	/** ��ǥ �� ���� �𸣰ٰ� ���� ����������� */
+
 	private void SpawnMonster() {
 		int ran = 0;
-		/** 1���� �Ѹ��� */
 		for (int i = 0; i < 15; i++) {
 			ran = CommonUtil.random(_MonsterList.length);
 			L1SpawnUtil.spawn5(32765, 32818, (short) 2101, 6,
@@ -95,7 +93,6 @@ public class IceQueenController implements Runnable {
 		L1SpawnUtil.spawn5(32772, 32802, (short) 2101, 6, _MonsterList[ran], 0,
 				1, 1);
 
-		/** 2�� �� �Ѹ��� */
 		L1SpawnUtil.spawn5(32813, 32805, (short) 2101, 6,
 				_MonsterList[CommonUtil.random(_MonsterList.length)], 0, 1, 2);
 		L1SpawnUtil.spawn5(32819, 32807, (short) 2101, 6,
@@ -108,7 +105,6 @@ public class IceQueenController implements Runnable {
 					_MonsterList[ran], 13, 1, 2);
 		}
 
-		/** 3�� �� �Ѹ��� */
 		L1SpawnUtil.spawn5(32859, 32832, (short) 2101, 6,
 				_MonsterList[CommonUtil.random(_MonsterList.length)], 0, 1, 3);
 		L1SpawnUtil.spawn5(32857, 32831, (short) 2101, 6,
@@ -121,20 +117,17 @@ public class IceQueenController implements Runnable {
 					_MonsterList[ran], 10, 1, 3);
 		}
 
-		/** 4�� �� �Ѹ��� */
 		for (int i = 0; i < 15; i++) {
 			ran = CommonUtil.random(_MonsterList.length);
 			L1SpawnUtil.spawn5(32767, 32892, (short) 2101, 6,
 					_MonsterList[ran], 12, 1, 4);
 		}
 
-		/** 5�� �� �Ѹ��� ( ���� ���� �߰� : ���̽� ���� ) */
 		for (int i = 0; i < 15; i++) {
 			ran = CommonUtil.random(_MonsterList.length);
 			L1SpawnUtil.spawn5(32767, 32892, (short) 2101, 6,
 					_MonsterList[ran], 12, 1, 5);
 		}
-		/** ���̽����� */
 		L1SpawnUtil.spawn5(32845, 32920, (short) 2101, 6, 46141, 0, 1, 5);
 		L1SpawnUtil.spawn5(32833, 32916, (short) 2101, 6, 46119, 0, 1, 5);
 		L1SpawnUtil.spawn5(32832, 32926, (short) 2101, 6, 46120, 0, 1, 5);
@@ -156,7 +149,6 @@ public class IceQueenController implements Runnable {
 			}
 		} else {
 			openDoor(5005);
-			/** ù��° �� ����. */
 			FirstRoom = false;
 			SecondRoom = true;
 		}
@@ -172,7 +164,6 @@ public class IceQueenController implements Runnable {
 			}
 		} else {
 			openDoor(5006);
-			/** �ι�° �� ����. */
 			SecondRoom = false;
 			ThirdRoom = true;
 		}
@@ -188,7 +179,6 @@ public class IceQueenController implements Runnable {
 			}
 		} else {
 			openDoor(5007);
-			/** ����° �� ����. */
 			ThirdRoom = false;
 			FourthRoom = true;
 		}
@@ -204,7 +194,6 @@ public class IceQueenController implements Runnable {
 			}
 		} else {
 			openDoor(5008);
-			/** �׹�° �� ����. */
 			FourthRoom = false;
 			BossRoom = true;
 		}
@@ -220,7 +209,6 @@ public class IceQueenController implements Runnable {
 			}
 		} else {
 			openDoor(5009);
-			/** �ټ���° �� ����. */
 			BossRoom = false;
 		}
 	}
@@ -246,11 +234,11 @@ public class IceQueenController implements Runnable {
 		}
 		if (Time <= 0) {
 			End();
-		} else if (Time <= 1190) {//���� �ʿ� 10�ʸ����� ����Ʈ ���� �ð�üũ
+		} else if (Time <= 1190) {
 			CheckPc();
 		}
-		if (Time % 60 == 0) {//60�б������� �ð�üũ
-			int min = Time / 60;//60�� �������� �ð�üũ
+		if (Time % 60 == 0) {
+			int min = Time / 60;
 			for (L1Object obj : L1World.getInstance().getVisibleObjects(2101)
 					.values()) {
 				if (obj instanceof L1PcInstance) {
@@ -276,7 +264,6 @@ public class IceQueenController implements Runnable {
 		}
 	}
 
-	/** ������ ��Ʈ�˸��� */
 	private void CountMob(L1PcInstance pc) {
 		if (FirstRoom) {
 			pc.sendPackets(new S_SystemMessage("\\fTThe current number of room remaining mobs are [ "
@@ -337,7 +324,6 @@ public class IceQueenController implements Runnable {
 				.values()) {
 			if (object instanceof L1DoorInstance) {
 				door = (L1DoorInstance) object;
-				/** �̰� spawnlist_door �̰Ŷ� ���� �̱���? */
 				if (door.getDoorId() == 5005 || door.getDoorId() == 5006
 						|| door.getDoorId() == 5007 || door.getDoorId() == 5008
 						|| door.getDoorId() == 5009) {

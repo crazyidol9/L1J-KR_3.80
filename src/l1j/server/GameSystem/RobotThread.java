@@ -17,24 +17,18 @@ import l1j.server.server.utils.SQLUtil;
 
 public class RobotThread implements Runnable {
 	
-	// �ΰ����� �����带 ó���ص��Ǵ��� Ȯ�ο�.
 	static private boolean running;
-	// �����尡 ������ ��� �޽��� �ð���.
 	static private long sleep;
-	// �ڷ���Ʈ�� ��ǥ���
 	static private List<RobotLocation> list_location;
-	// �ڷ���Ʈ�� ��ǥ���
 	static private List<RobotMent> list_ment;
-	// ������ �ɸ��� ���
 	static private List<RobotName> list_name;
 	static public int list_name_idx;
 	static private List<RobotFishing> list_fish;
 	
 	/**
-	 * �ʱ�ȭ ó�� �Լ�.
+	 * 
 	 */
 	static public void init(){
-		// ���� �ʱ�ȭ.
 		sleep = 20;
 		running = true;
 		list_name_idx = 0;
@@ -42,9 +36,8 @@ public class RobotThread implements Runnable {
 		list_ment = new FastTable<RobotMent>();
 		list_name = new FastTable<RobotName>();
 		list_fish = new FastTable<RobotFishing>();
-		// �κ� �ΰ����ɿ� ������ Ȱ��ȭ.
+
 		new Thread(new RobotThread()).start();
-		// ���κ��� ���� ����.
 		Connection con = null;
 		PreparedStatement pstm = null;
 		ResultSet rs = null;
@@ -124,7 +117,7 @@ public class RobotThread implements Runnable {
 	}
 	
 	/**
-	 * ���� ó�� �Լ�.
+	 * 
 	 */
 	static public void close(){
 		running = false;
@@ -132,14 +125,12 @@ public class RobotThread implements Runnable {
 	public void run(){
 		try {
 			for( ; running ; ){
-				// �޽�
-				Thread.sleep(sleep);
-				// �κ��� �ΰ����� Ȱ��ȭ.				
+				Thread.sleep(sleep);				
 			}
 		} catch (Exception e) {
 			try {
 			for( ; running ; ){		
-				Thread.sleep(sleep);		// �κ��� �ΰ����� Ȱ��ȭ.
+				Thread.sleep(sleep);
 			}
 			}catch (Exception f) {
 				System.out.println("AI robot thread is terminated abnormally duplicated Error Resume!");
@@ -151,7 +142,7 @@ public class RobotThread implements Runnable {
 	}
 	
 	/**
-	 * ����� �ڷ���Ʈ ��ǥ����.
+	 * 
 	 * @param type
 	 * @return
 	 */
@@ -176,7 +167,7 @@ public class RobotThread implements Runnable {
 	
 	static public String getName(){
 		try {
-			// �̸���� ��ȸ.
+
 			for( ; list_name_idx < list_name.size() ; ){
 				String name = list_name.get(list_name_idx++).name;
 				Connection con = null;
@@ -197,8 +188,6 @@ public class RobotThread implements Runnable {
 				}
 			}
 		} catch (Exception e) { }
-		// ��� ������ �̸� ���� Ȯ��.
-		// �������� �̵������� �����Ұ�� ����.
 		return null;
 	}
 	

@@ -239,13 +239,13 @@ public class DropTable {
 		/* 아덴은 몹당 1번이기에 아덴에서 결정체 이벤트를 관리한다 */
 
 		// GameServerSetting gss = GameServerSetting.getInstance();
-		if (GameServerSetting.이벤트) {
-			if (GameServerSetting.이벤트아이템맵 == 4) {// 본토
+		if (GameServerSetting.event) {
+			if (GameServerSetting.eventMapItems == 4) {// 본토
 				if (npc.getMapId() == 4) {
 					int itemRandom = random.nextInt(100) + 1;
 					if (itemRandom <= 3) {
 						item = ItemTable.getInstance().createItem(
-								GameServerSetting.이벤트아이템코드);
+								GameServerSetting.eventItemCode);
 						if (item != null) {
 							item.setCount(1);
 							inventory.storeItem(item);
@@ -253,12 +253,12 @@ public class DropTable {
 					}
 				}
 			}
-			if (GameServerSetting.이벤트아이템맵 == 7) {// 본던1층
+			if (GameServerSetting.eventMapItems == 7) {// 본던1층
 				if (npc.getMapId() == 7) {
 					int itemRandom = random.nextInt(100) + 1;
 					if (itemRandom <= 3) {
 						item = ItemTable.getInstance().createItem(
-								GameServerSetting.이벤트아이템코드);
+								GameServerSetting.eventItemCode);
 						if (item != null) {
 							item.setCount(1);
 							inventory.storeItem(item);
@@ -266,12 +266,12 @@ public class DropTable {
 					}
 				}
 			}
-			if (GameServerSetting.이벤트아이템맵 == 53) {// 기감1층
+			if (GameServerSetting.eventMapItems == 53) {// 기감1층
 				if (npc.getMapId() == 53) {
 					int itemRandom = random.nextInt(100) + 1;
 					if (itemRandom <= 3) {
 						item = ItemTable.getInstance().createItem(
-								GameServerSetting.이벤트아이템코드);
+								GameServerSetting.eventItemCode);
 						if (item != null) {
 							item.setCount(1);
 							inventory.storeItem(item);
@@ -279,12 +279,12 @@ public class DropTable {
 					}
 				}
 			}
-			if (GameServerSetting.이벤트아이템맵 == 303) {// 몽섬
+			if (GameServerSetting.eventMapItems == 303) {// 몽섬
 				if (npc.getMapId() == 303) {
 					int itemRandom = random.nextInt(100) + 1;
 					if (itemRandom <= 3) {
 						item = ItemTable.getInstance().createItem(
-								GameServerSetting.이벤트아이템코드);
+								GameServerSetting.eventItemCode);
 						if (item != null) {
 							item.setCount(1);
 							inventory.storeItem(item);
@@ -295,7 +295,7 @@ public class DropTable {
 				int itemRandom = random.nextInt(100) + 1;
 				if (itemRandom <= 3) {
 					item = ItemTable.getInstance().createItem(
-							GameServerSetting.이벤트아이템코드);
+							GameServerSetting.eventItemCode);
 					if (item != null) {
 						item.setCount(1);
 						inventory.storeItem(item);
@@ -518,6 +518,7 @@ public class DropTable {
 				hateList.remove(i);
 			}
 		}
+		
 		
 		// 드롭의 분배
 		L1ItemInstance item;
@@ -748,7 +749,7 @@ public class DropTable {
 			}
 			inventory.tradeItem(item, item.getCount(), targetInventory);
 		}
-		npc.getLight().turnOnOffLight();
+		pc.getLight().turnOnOffLight();
 	}
 
 	public void setPainwandDrop(L1NpcInstance npc, L1Inventory inventory) {

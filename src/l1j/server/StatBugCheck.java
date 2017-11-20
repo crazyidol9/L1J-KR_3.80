@@ -118,8 +118,7 @@ public class StatBugCheck implements Runnable {
 					}
 				}
 				////////////////////////////////////////////////////////////////////////////////////////////
-                               GameServer.getInstance().saveAllCharInfo();//��������
-                                //System.out.println("[GameServer] ���׻���ڰ˻缭������Ϸ�..");
+                               GameServer.getInstance().saveAllCharInfo();
                ////////////////////////////////////////////////////////////////////////////////////////////
 				
                                

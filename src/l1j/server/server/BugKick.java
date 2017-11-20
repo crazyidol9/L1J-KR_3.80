@@ -47,18 +47,18 @@ public class BugKick {
 	public void KickPlayer(L1PcInstance pc) {
 		try {
 			L1Teleport.teleport(pc, 32737, 32796, (short) 99, 5, true);
-			pc.sendPackets(new S_Poison(pc.getId(), 2)); // ���� ���°� �Ǿ����ϴ�.
-			Broadcaster.broadcastPacket(pc, new S_Poison(pc.getId(), 2)); // ����
-																			// ���°�
-																			// �Ǿ����ϴ�.
+			pc.sendPackets(new S_Poison(pc.getId(), 2)); 
+			Broadcaster.broadcastPacket(pc, new S_Poison(pc.getId(), 2)); 
+																			
+																			
 			pc.sendPackets(new S_Paralysis(S_Paralysis.TYPE_STUN, true));
 			pc.getSkillEffectTimerSet().hasSkillEffect(SHOCK_STUN);
 			pc.getSkillEffectTimerSet().setSkillEffect(SHOCK_STUN,
-					24 * 60 * 60 * 1000);// ������� ����
+					24 * 60 * 60 * 1000);
 			Connection con = null;
 			PreparedStatement pstm = null;
 			con = L1DatabaseFactory.getInstance().getConnection();
-		    pstm = con.prepareStatement("UPDATE accounts SET banned = 0 WHERE login= ?"); //��ó����!
+		    pstm = con.prepareStatement("UPDATE accounts SET banned = 0 WHERE login= ?"); 
 			pstm.setString(1, pc.getAccountName());
 			pstm.execute();
 			pstm.close();
@@ -66,7 +66,7 @@ public class BugKick {
 			L1World.getInstance().broadcastServerMessage(
 					"Bugs Attempt: [" + pc.getName() + "]");
 		} catch (Exception e) {
-			// System.out.println(pc.getName()+" ȭ���� ��� ����");
+			// System.out.println(pc.getName()+" ");
 		}
 	}
 }

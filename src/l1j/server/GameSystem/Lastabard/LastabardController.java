@@ -22,7 +22,7 @@ public class LastabardController {
 
 	private RealTime _previousTime = null;
 
-	private int[][] fourthFloor = new int[2][3]; // ��� 4�� �ι�° ��, �׹�° ��
+	private int[][] fourthFloor = new int[2][3];
 
 	public static LastabardController getInstance() {
 		if (_instance == null) {
@@ -113,7 +113,6 @@ public class LastabardController {
 			}
 			for(LastabardTime time : timeList) {
 				if(time.isTimeOver(getRealTime().getSeconds())) {
-					// �ش� ���� �ð��� ����, �ش� ���� ���� �����ϰ� �ش� ������ �����ϱ� ���� ����ϴ� ���� ����
 					reset(time.getMapId(), time.getRelatedDoor());
 					timeList.remove(time);
 				}
@@ -131,7 +130,7 @@ public class LastabardController {
 			return;
 		L1DoorInstance door = DoorSpawnTable.getInstance().getDoor(relatedDoor);
 		if (door != null) {
-			door.setDead(false); // ������ ����?
+			door.setDead(false);
 			door.close();
 		}
 	}

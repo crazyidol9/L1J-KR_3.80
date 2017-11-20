@@ -130,7 +130,6 @@ public class SpecialEventHandler {
 				l1skilluse.handleCommands(pc, allBuffSkill[i], pc.getId(), pc.getX(), pc.getY(), null, 0, L1SkillUse.TYPE_GMBUFF);
 			}
 			pc.sendPackets(new S_SkillSound(pc.getId(), 4856));
-//			pc.sendPackets(new S_SystemMessage("�����Ե� ����ؿ�~v"));
 		}
 	}
 

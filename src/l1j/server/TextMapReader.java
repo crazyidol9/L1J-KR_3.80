@@ -62,14 +62,14 @@ public class TextMapReader extends MapReader {
 	public static final int MAPINFO_END_Y = 4;
 
 	/**
-	 * ������ �� ��ȣ�� �ؽ�Ʈ ���� �о���δ�.
+	 * 
 	 * 
 	 * @param mapId
-	 *            �� ��ȣ
+	 *            
 	 * @param xSize
-	 *            X��ǥ�� ������
+	 *            
 	 * @param ySize
-	 *            Y��ǥ�� ������
+	 *            
 	 * @return byte[][]
 	 * @throws IOException
 	 */
@@ -85,7 +85,7 @@ public class TextMapReader extends MapReader {
 		StringTokenizer tok = null;
 		while ((line = in.readLine()) != null) {
 			if (line.trim().length() == 0 || line.startsWith("#")) {
-				continue; // ����, �ڸ�Ʈ�� ��ŵ
+				continue; 
 			}
 
 			x = 0;
@@ -103,10 +103,10 @@ public class TextMapReader extends MapReader {
 	}
 
 	/**
-	 * ������ �� ��ȣ�� �ؽ�Ʈ ���� ����
+	 * 
 	 * 
 	 * @param id
-	 *            �� ��ȣ
+	 * 
 	 * @return L1Map
 	 * @throws IOException
 	 */
@@ -140,7 +140,7 @@ public class TextMapReader extends MapReader {
 	}
 
 	/**
-	 * ��� �ؽ�Ʈ ���� ����
+	 * 
 	 * 
 	 * @return Map
 	 * @throws IOException
@@ -180,8 +180,8 @@ public class TextMapReader extends MapReader {
 	}
 
 	/**
-	 * mapInfo���� No, �� ����� ���� �����ϰ� �ִ�. 1 ���ڵ尡{mapNo, StartX, EndX, StartY,
-	 * EndY}�� �����Ǿ� �ִ�.
+	 * mapInfo
+	 * EndY
 	 */
 	private static final int[][] MAP_INFO = {
 		{0, 32256, 32767, 32768, 33279},

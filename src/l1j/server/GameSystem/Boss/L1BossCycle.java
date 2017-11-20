@@ -179,13 +179,13 @@ public class L1BossCycle {
 		PerformanceTimer timer = new PerformanceTimer();
 		System.out.print("[L1BossCycle] Loading boss cycle...");
 		try {
-			// BookOrder Ŭ������ ���ε� �ϴ� ������ ����
+			// BookOrder 
 			JAXBContext context = JAXBContext.newInstance(L1BossCycleList.class);
 
-			// XML -> POJO ��ȯ�� �ǽ��ϴ� �𸶼��� ����
+			// XML -> POJO
 			Unmarshaller um = context.createUnmarshaller();
 
-			// XML -> POJO ��ȯ
+			// XML -> POJO
 			File file = new File("./data/xml/Cycle/BossCycle.xml");
 			L1BossCycleList bossList = (L1BossCycleList) um.unmarshal(file);
 
@@ -200,7 +200,6 @@ public class L1BossCycle {
 				}
 			}
 						
-			// spawnlist_boss�κ��� �о�鿩 ��ġ
 			//BossSpawnTable.fillSpawnTable();
 		} catch (Exception e) {
 			_log.log(Level.SEVERE, "Can not read BossCycle", e);

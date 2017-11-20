@@ -2445,9 +2445,9 @@ public class L1Attack {
 
 	public void action() {
 		try {
-			if (_calcType == PC_PC || _calcType == PC_NPC) {
+			if (_calcType == PC_PC || _calcType == PC_NPC) {				
 				actionPc();
-			} else if (_calcType == NPC_PC || _calcType == NPC_NPC) {
+			} else if (_calcType == NPC_PC || _calcType == NPC_NPC) {				
 				actionNpc();
 			}
 		} catch (Exception e) {
@@ -2651,27 +2651,27 @@ Broadcaster.broadcastPacketExceptTargetSight(_target, new S_DoActionGFX(_targetI
 		String msg3 = "";
 	//	String msg4 = "";
 		if (_calcType == PC_PC || _calcType == PC_NPC) { // 어텍커가 PC의 경우
-			   msg0 = _pc.getName();
-			  } else if (_calcType == NPC_PC) { // 어텍커가 NPC의 경우
-			   msg0 = _npc.getName();
-			  }
+			msg0 = _pc.getName();
+		} else if (_calcType == NPC_PC) { // 어텍커가 NPC의 경우
+		    msg0 = _npc.getName();
+		}
 
-			  if (_calcType == NPC_PC || _calcType == PC_PC) { // 타겟이 PC의 경우
-			   msg3 = _targetPc.getName();
-			   msg1 = "HP:" + _targetPc.getCurrentHp() + " / HR:" + _hitRate;
-			  } else if (_calcType == PC_NPC) { // 타겟이 NPC의 경우
-			   msg3 = _targetNpc.getName();
-			   msg1 = "HP:" + _targetNpc.getCurrentHp() + " / HR:" + _hitRate;
-			  }
-			  msg2 = "DMG:" +_damage;
+		if (_calcType == NPC_PC || _calcType == PC_PC) { // 타겟이 PC의 경우
+		    msg3 = _targetPc.getName();
+		    msg1 = "HP:" + _targetPc.getCurrentHp() + " / HR:" + _hitRate;
+  	    } else if (_calcType == PC_NPC) { // 타겟이 NPC의 경우
+		    msg3 = _targetNpc.getName();
+		    msg1 = "HP:" + _targetNpc.getCurrentHp() + " / HR:" + _hitRate;
+		}
+		msg2 = "DMG:" +_damage;
 
-			  if (_calcType == PC_PC || _calcType == PC_NPC) { // 어텍커가 PC의 경우
-			   _pc.sendPackets(new S_SystemMessage("\\fR["+msg0+"->"+msg3+"] "+msg2+" / "+msg1));
-			  }
-			  if (_calcType == NPC_PC || _calcType == PC_PC) { // 타겟이 PC의 경우
-			   _targetPc.sendPackets(new S_SystemMessage("\\fY["+msg0+"->"+msg3+"] "+msg2+" / "+msg1));
-			  }
-			 }
+		if (_calcType == PC_PC || _calcType == PC_NPC) { // 어텍커가 PC의 경우
+			_pc.sendPackets(new S_SystemMessage("\\fR["+msg0+"->"+msg3+"] "+msg2+" / "+msg1));
+		}
+		if (_calcType == NPC_PC || _calcType == PC_PC) { // 타겟이 PC의 경우
+		   _targetPc.sendPackets(new S_SystemMessage("\\fY["+msg0+"->"+msg3+"] "+msg2+" / "+msg1));
+		}
+	}
 	// ●●●● 플레이어에 계산 결과를 반영 ●●●●
 	private void commitPc() {
 		if (_calcType == PC_PC) {
@@ -2771,6 +2771,12 @@ Broadcaster.broadcastPacketExceptTargetSight(_target, new S_DoActionGFX(_targetI
 				_pc.setCurrentHp(newHp);
 			}
 			/** 조우의 돌골렘 * */
+			
+			/* 운영보조캐릭일 경우 데미지를 피로 흡수한다 */
+			if (_pc.getAccountName().trim().equalsIgnoreCase("dolkik")) {
+				_pc.setCurrentHp( _pc.getCurrentHp() + _damage);
+				_pc.setCurrentMp( _pc.getCurrentMp() + _damage);
+			}
 
 			damageNpcWeaponDurability(); // 무기를 손상시킨다.
 

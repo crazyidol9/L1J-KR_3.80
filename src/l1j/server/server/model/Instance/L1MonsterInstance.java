@@ -1098,15 +1098,14 @@ public class L1MonsterInstance extends L1NpcInstance {
 
 	public void die(L1Character lastAttacker) {
 		try {
-	
 			setDeathProcessing(true);
 			setCurrentHp(0);
-			setDead(true);
+			setDead(true);			
 			setActionStatus(ActionCodes.ACTION_Die);
 			getMap().setPassable(getLocation(), true);
 			Broadcaster.broadcastPacket(this, new S_DoActionGFX(getId(),ActionCodes.ACTION_Die));
 			startChat(CHAT_TIMING_DEAD);
-			distributeExpDropKarma(lastAttacker);
+			distributeExpDropKarma(lastAttacker);			
 			giveUbSeal();
 			setDeathProcessing(false);
 			setExp(0);
@@ -1570,7 +1569,7 @@ public class L1MonsterInstance extends L1NpcInstance {
 
 		if (pc != null) {
 			FastTable<L1Character> targetList = _hateList.toTargetFastTable();
-			FastTable<Integer> hateList = _hateList.toHateFastTable();
+			FastTable<Integer> hateList = _hateList.toHateFastTable();			
 			if (pc != null && pc.getRobotAi() == null) {
 				int exp = getExp();
 				CalcExp.calcExp(pc, getId(), targetList, hateList, exp);
@@ -1621,6 +1620,7 @@ public class L1MonsterInstance extends L1NpcInstance {
 						dropTargetList, dropHateList, pc);
 			}
 		} catch (Exception e) {
+			
 			//_log.log(Level.SEVERE, e.getLocalizedMessage(), e);
 		}
 	}
